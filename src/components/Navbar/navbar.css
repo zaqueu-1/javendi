@@ -1,0 +1,135 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgb(138, 138, 138, 0.2);
+    cursor: pointer;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.navbar h1 {
+    font-size: 2rem;
+    color: #7ED956;
+}
+
+.navbar img {
+    width: 70px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.searchbar input {
+    width: 350px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.searchbar input:focus {
+    outline: none;
+    border: 1px solid #7ED956;
+    box-shadow: 0 0 5px #7ED956;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.menu ul {
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+}
+
+.menu ul a {
+    text-decoration: none;
+    color: #454545;
+}
+
+.pages {
+    transition: all 0.4s;
+    cursor: pointer;
+    color:rgb(25, 25, 25),
+}
+
+.pages:hover {
+    color: #7ED956;
+}
+
+.simple-divider {
+    color: rgb(138, 138, 138, 0.2);
+}
+
+#myStore {
+    color: white;
+    font-weight: 700;
+    background-color: #7ED956;
+    padding: .5rem .8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#myStore:hover {
+    transform: scale(1.02);
+    box-shadow: -6px 4px rgb(126, 217, 86, 0.5);
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gear {
+    color: rgb(156, 156, 156);
+    font-weight: 700;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.4s;
+    border: none;
+    background: none;
+    display: flex;
+}
+
+.gear:hover {
+    color: #454545;
+    transform: rotate(45deg) scale(1.02);
+}
+
+.signout-button {
+    color: rgb(217, 108, 108);
+    border: none;
+    font-size: 1.7rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.4s;
+    border: none;
+    background: none;
+    display: flex;
+}
+
+.signout-button:hover {
+    color: rgba(192, 37, 37, 0.8);
+    transform: scale(1.15);
+}
