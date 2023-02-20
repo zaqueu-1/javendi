@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Header from '../../components/Header/Header'
-import Signup from '../../components/Signup/Signup'
+import Header from '../../components/Header/Header.jsx'
+import Signup from '../../components/Signup/Signup.jsx'
 import './login.css'
 import { BiLogIn } from 'react-icons/bi'
 import fetchDb from '../../axios/fetchDb'
