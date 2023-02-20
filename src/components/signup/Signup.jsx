@@ -1,12 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import './signup.css'
 import { motion } from 'framer-motion'
 import { toast } from 'react-toastify'
 import fetchDb from '../../axios/fetchDb'
 
-function Signup({ modalOpen, setModalOpen }) {
-
-    const modalRef = useRef(null);
+function Signup({ setModalOpen }) {
 
     const [userName, setUserName] = useState('')
     const [userEmail, setUserEmail] = useState('')
@@ -44,7 +42,7 @@ function Signup({ modalOpen, setModalOpen }) {
     }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.2 } }} ref={modalRef} className='modal-container'>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.2 } }} className='modal-container'>
       <motion.form initial={{y:20}} animate={{ y: 0}} transition={{ ease: "easeOut", duration: 0.8 }} className="signup-box">
         <h1>cadastre-se</h1>
         <p>e faça parte da melhor plataforma de vendas!</p>

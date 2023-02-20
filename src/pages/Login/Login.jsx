@@ -42,7 +42,6 @@ function Login() {
       } catch (error) {
           toast.error('Email ou senha incorretos!');
           console.log(error);
-          console.log(userPass)
       }
   };
 
