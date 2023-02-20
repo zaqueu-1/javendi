@@ -50,19 +50,24 @@ function Login() {
     <>
       <Header />
       <div className="login-container">
-        <motion.form initial={{y: 40, opacity: 0 }} animate={{ y: 0 , opacity:1 }} transition={{ ease: "easeOut", duration: 0.7 }} className="login-form">
-            <h1 className="login-title">e aí? já vendeu?</h1>
-            <input className="login-input" value={userEmail} required onChange={(e) => setUserEmail(e.target.value)} type="text" placeholder="E-mail" />
-            <input className="login-input" value={userPass} required onChange={(e) => setUserPass(e.target.value)} type="password" placeholder="********" />
-            <button className="login-button" onClick={(e) => handleAuth(e)} type="submit">Entrar</button>
-        </motion.form>
+        {!modalOpen && (
+            <>
+                <motion.form initial={{y: 40, opacity: 0 }} animate={{ y: 0 , opacity:1 }} transition={{ ease: "easeOut", duration: 0.7 }} className="login-form">
+                    <h1 className="login-title">e aí? já vendeu?</h1>
+                    <input className="login-input" value={userEmail} required onChange={(e) => setUserEmail(e.target.value)} type="text" placeholder="E-mail" />
+                    <input className="login-input" value={userPass} required onChange={(e) => setUserPass(e.target.value)} type="password" placeholder="********" />
+                    <button className="login-button" onClick={(e) => handleAuth(e)} type="submit">Entrar</button>
+                </motion.form>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity:1 }} transition={{ ease: "easeOut", duration: 1.0 }}className="divider"></motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity:1 }} transition={{ ease: "easeOut", duration: 1.0 }}className="divider"></motion.div>
 
-        <motion.div initial={{y: 40, opacity: 0 }} animate={{ y: 0 , opacity:1 }} transition={{ ease: "easeOut", duration: 0.7 }} className="signup-container">
-            <h1>ainda não é cadastrado?</h1>
-            <button className="signup-button" onClick={openSignup}><BiLogIn /> Cadastrar</button>
-        </motion.div>
+                <motion.div initial={{y: 40, opacity: 0 }} animate={{ y: 0 , opacity:1 }} transition={{ ease: "easeOut", duration: 0.7 }} className="signup-container">
+                    <h1>ainda não é cadastrado?</h1>
+                    <button className="signup-button" onClick={openSignup}><BiLogIn /> Cadastrar</button>
+                </motion.div>
+            </>
+        )}
+
       </div>
       {modalOpen && (
                     <Signup modalOpen={modalOpen} setModalOpen={setModalOpen}/>

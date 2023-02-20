@@ -21,10 +21,6 @@
     width: 55%;
 }
 
-.login-button:hover {
-    background-color: #4872b6;
-}
-
 .divider {
     width: 60%;
     height: 1px;
@@ -41,21 +37,16 @@
     margin-bottom: 1rem;
 }
 
-.signup-button {
-    width: 30%;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
-    padding: 0 10px;
-    margin-bottom: 10px;
-    background-color: #e1b94c;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.4s;
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    gap: .4rem;
+    margin-top: .5rem;
 }
 
-.login-button {
+.login-button, .signup-button, .cancel-btn {
     width: 50%;
     height: 40px;
     border: none;
@@ -72,8 +63,16 @@
     justify-content: center;
     gap: .2rem;
   }
+
+  .signup-button {
+    background-color: #d9c66e;
+}
+
+  .cancel-btn {
+    background-color: #e96262;
+}
   
-  .login-button:hover, .signup-button:hover {
-    box-shadow: -6px 4px rgb(62, 62, 62, 0.3);
-    transform: scale(1.02);
+  .login-button:hover, .signup-button:hover, .cancel-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
   }
