@@ -5,7 +5,7 @@
 This project was built entirely using MERN stack techs (MongoDB, Express, ReactJS, NodeJS). This platforma aims to be an easy and intuitive way to buy and sell products and services. 
 
 ## Demo
-![demo](https://github.com/zaqueu-1/nutrispace/blob/main/github/chrome-capture-2023-1-12.gif)
+![demo](https://github.com/zaqueu-1/javendi/blob/main/github/chrome-capture-2023-1-19.gif)
 
 ## Deploy
 https://javendi.vercel.app/
