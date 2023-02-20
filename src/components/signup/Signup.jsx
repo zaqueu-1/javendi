@@ -23,7 +23,7 @@ function Signup({ modalOpen, setModalOpen }) {
         return () => {
           document.removeEventListener("click", handleClickOutside);
         };
-      }, [modalOpen]);
+      }, []);
       
 
     function handleClickOutside(e) {
