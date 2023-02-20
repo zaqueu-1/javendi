@@ -3,25 +3,12 @@ import React, { createContext, useContext, useState } from 'react';
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-    const [userName, setUserName] = useState('')
-    const [userEmail, setUserEmail] = useState('')
-    const [userPass, setUserPass] = useState('')
-    const [confirmPass, setConfirmPass] = useState('')
-    const [createdBy, setCreatedBy] = useState('')
-
+    const [userId, setUserId] = useState('')
  
     return (
     <AppContext.Provider value={{
-      userName,
-      setUserName,
-      userEmail,
-      setUserEmail,
-      userPass,
-      setUserPass,
-      confirmPass,
-      setConfirmPass,
-      createdBy,
-      setCreatedBy
+      userId,
+      setUserId,
      }} >
           {children}
         </AppContext.Provider>

@@ -1,24 +1,17 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './signup.css'
 import { motion } from 'framer-motion'
 import { toast } from 'react-toastify'
 import fetchDb from '../../axios/fetchDb'
-import { AppConsumer } from '../../contexts/AppContext'
 
 function Signup({ modalOpen, setModalOpen }) {
 
     const modalRef = useRef(null);
 
-    const {
-        userName, 
-        setUserName,
-        userEmail,
-        setUserEmail,
-        userPass,
-        setUserPass,
-        confirmPass,
-        setConfirmPass,
-     } = AppConsumer();
+    const [userName, setUserName] = useState('')
+    const [userEmail, setUserEmail] = useState('')
+    const [userPass, setUserPass] = useState('')
+    const [confirmPass, setConfirmPass] = useState('')
 
     useEffect(() => {
         if (modalOpen) {

@@ -10,6 +10,7 @@
 .logo-wrapper {
     display: flex;
     align-items: center;
+    gap: .5rem;
     padding: 0 0.5rem;
 }
 
@@ -48,7 +49,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: .5rem;
 }
 
 .menu ul {
@@ -94,22 +95,15 @@
     box-shadow: -6px 4px rgb(126, 217, 86, 0.5);
 }
 
-.tools {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
 .gear {
-    color: rgb(156, 156, 156);
-    font-weight: 700;
-    font-size: 1.4rem;
+    color: rgb(90, 90, 90);
+    font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.4s;
     border: none;
     background: none;
     display: flex;
+    margin-top: .4rem;
 }
 
 .gear:hover {
@@ -118,7 +112,7 @@
 }
 
 .signout-button {
-    color: rgb(217, 108, 108);
+    color: rgb(90, 90, 90);
     border: none;
     font-size: 1.7rem;
     background-color: transparent;

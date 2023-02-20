@@ -7,7 +7,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-input {
+input, select {
   width: 100%;
   height: 40px;
   border: 1px solid #ccc;
@@ -17,7 +17,7 @@ input {
   transition: all 0.4s;
 }
 
-input:focus {
+input:focus, select:focus {
   outline: none;
   border: 1px solid #7ED956;
   box-shadow: 0 0 5px #7ED956;

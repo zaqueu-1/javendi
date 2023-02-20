@@ -1,0 +1,120 @@
+.products-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.left-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 45%;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 450px;
+    background-color: rgb(156, 156, 156, 0.2);
+    border-radius: 8px;
+}
+
+.product-image {
+    height: 400px;
+}
+
+.desc-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 1rem 0 1rem;   
+}
+
+.product-desc {
+    align-self: flex-start;
+    margin: .5rem 1rem 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45%;
+    height: 450px;
+    padding: 0 2rem 2rem 5rem;
+    margin-top: -2.5rem;
+}
+
+.product-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    padding: .5rem 1rem;
+    background-color: green;
+    border-radius: 8px;
+}
+
+.product-button {
+    width: 210px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    padding: 0 .5rem;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    background-color: #9c9c9c;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer; 
+    transition: all 0.4s;
+}
+
+.product-button:hover {
+    opacity: 0.8;
+}
+
+.product-owner {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: .5rem;
+    margin-bottom: .3rem;
+    margin-left: .5rem;
+}
+
+.owner-contact {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    color:  #7ED956;
+}
+
+.owner-contact p {
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+}

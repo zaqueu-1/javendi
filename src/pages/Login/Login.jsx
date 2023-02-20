@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Header from '../../components/Header/Header'
-import Signup from '../../components/signup/Signup'
+import Signup from '../../components/Signup/Signup'
 import './login.css'
 import { BiLogIn } from 'react-icons/bi'
-import { AppConsumer } from '../../contexts/AppContext'
 import fetchDb from '../../axios/fetchDb'
 import { toast } from 'react-toastify'
 import { motion } from 'framer-motion'
@@ -11,15 +10,8 @@ import { motion } from 'framer-motion'
 function Login() {
 
     const [modalOpen, setModalOpen] = useState(false)
-
-    const {         
-      userEmail,
-      setUserEmail,
-      userPass,
-      setUserPass,
-      createdBy,
-      setCreatedBy,
-    } = AppConsumer();
+    const [userEmail, setUserEmail] = useState('')
+    const [userPass, setUserPass] = useState('')
 
     const openSignup = () => {
         (modalOpen ? setModalOpen(false) : setModalOpen(true))
@@ -40,8 +32,10 @@ function Login() {
   
       try {
           const res = await fetchDb.post('/login', userCredentials);
-          const { token } = res.data;
-          localStorage.setItem('createdBy', userEmail);
+          const userId = res.data.userId
+          const { token } = res.data.token
+
+          localStorage.setItem('userId', userId);
           localStorage.setItem('token', token);
           window.location.href = '/home';
 
