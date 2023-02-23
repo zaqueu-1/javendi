@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Navigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './store.css'
 import serviceImg from '../../img/card-services.png'
@@ -11,7 +12,7 @@ import { toast } from 'react-toastify'
 import { ProductsConsumer } from '../../contexts/ProductContext'
 import { ServicesConsumer } from '../../contexts/ServiceContext'
 
-function Store() {
+function Store({user}) {
 
   const [screen, setScreen] = useState('question-screen')
 
@@ -138,6 +139,10 @@ function Store() {
       const res = await fetchDb.post('/service', newService)
       window.location = '/store'
     }
+  }
+
+  if (!user) {
+    return <Navigate to="/login" />;
   }
 
   return (

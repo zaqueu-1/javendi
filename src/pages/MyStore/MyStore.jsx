@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Navigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './mystore.css'
 import { motion } from 'framer-motion'
@@ -8,7 +9,7 @@ import { RiDeleteBin2Fill } from 'react-icons/ri'
 import Card from '../../components/Card/Card'
 import fetchDb from '../../axios/fetchDb'
 
-function MyStore() {
+function MyStore({auth}) {
 
   const userId = localStorage.getItem('userId')
   const [currentStore, setCurrentStore] = useState('products')
@@ -72,6 +73,10 @@ function MyStore() {
     await fetchDb.delete(`/service/${id}`).then( 
       window.location.reload()
     )
+  }
+
+  if (!auth) {
+    return <Navigate to="/login" />;
   }
 
 

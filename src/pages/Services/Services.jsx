@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar'
 import './services.css'
 import Card from '../../components/Card/Card'
 import { motion } from 'framer-motion'
 import fetchDb from '../../axios/fetchDb'
 
-function Services() {
+function Services({user}) {
 
   const [services, setServices] = useState([])
   const [filteredServices, setFilteredServices] = useState([])
@@ -33,6 +34,10 @@ function Services() {
             const filteredServices = services.filter(service => service.serviceTags === tag)
             setFilteredServices(filteredServices)
         }
+    }
+
+    if (!user) {
+      return <Navigate to="/login" />;
     }
 
   return (

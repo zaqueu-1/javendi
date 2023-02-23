@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Navigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import fetchDb from '../../axios/fetchDb'
 import { motion } from 'framer-motion'
@@ -9,7 +10,7 @@ import { BsArrowBarLeft } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import './product.css'
 
-function Product() {
+function Product({user}) {
 
   const { id } = useParams()
   const [product, setProduct] = useState([])
@@ -46,6 +47,9 @@ function Product() {
     loadProduct()
   }, [])
 
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <>

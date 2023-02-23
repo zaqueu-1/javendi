@@ -81,13 +81,12 @@ function User() {
     }
   }
 
-
   return (
     <>
       <Header />
       <div className="user-container">
 
-        <div className="user-wrapper">
+        <motion.div initial={{y: 20, opacity: 0 }} animate={{ y: 0 , opacity:1 }} transition={{ ease: "easeOut", duration: 0.7 }}  className="user-wrapper">
           {editForm === false ? (
             <>
               <div className="user-pic">
@@ -125,8 +124,8 @@ function User() {
               </div>
 
             </>
-          ) : 0}
-        </div>
+          ) : null}
+        </motion.div>
       </div>
     </>
   )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header.jsx'
 import Signup from '../../components/Signup/Signup.jsx'
 import './login.css'
@@ -7,11 +8,12 @@ import fetchDb from '../../axios/fetchDb'
 import { toast } from 'react-toastify'
 import { motion } from 'framer-motion'
 
-function Login() {
+function Login({ handleLogin }) {
 
     const [modalOpen, setModalOpen] = useState(false)
     const [userEmail, setUserEmail] = useState('')
     const [userPass, setUserPass] = useState('')
+    const navigate = useNavigate();
 
     const openSignup = () => {
         (modalOpen ? setModalOpen(false) : setModalOpen(true))
@@ -33,11 +35,13 @@ function Login() {
       try {
           const res = await fetchDb.post('/login', userCredentials);
           const userId = res.data.userId
-          const { token } = res.data.token
+          const token = res.data.token
 
           localStorage.setItem('userId', userId);
           localStorage.setItem('token', token);
-          window.location.href = '/home';
+
+          await handleLogin(token, userId);
+          navigate('/home');
 
       } catch (error) {
           toast.error('Email ou senha incorretos!');
@@ -68,9 +72,9 @@ function Login() {
         )}
 
       </div>
-      {modalOpen && (
-                    <Signup modalOpen={modalOpen} setModalOpen={setModalOpen}/>
-                )}
+      {modalOpen ? (
+        <Signup modalOpen={modalOpen} setModalOpen={setModalOpen}/>
+    ) : null}
     </>
   )
 }

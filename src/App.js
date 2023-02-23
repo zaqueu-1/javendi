@@ -13,20 +13,36 @@ import { AnimatePresence } from 'framer-motion'
 
 function App() {
 
+  const [user, setUser] = React.useState(null)
+
+  React.useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    if (token && userId) {
+      setUser({ token, userId });
+    }
+  }, []);
+
+   const handleLogin = (token, userId) => {
+      setUser({ token: token, userId: userId })
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
+   }
+
   return (
     <AnimatePresence>
         <BrowserRouter>
           <Routes>
-            <Route path='/home' element={ <Home/> } />
-            <Route path='/login' element={ <Login /> } />
-            <Route path='/' element={ <Login /> } />
-            <Route path='/user' element={ <User/> } />
-            <Route path='/store' element={ <Store/> } />
-            <Route path='/mystore' element={ <MyStore/> } />
-            <Route path='/product/:id' element={ <Product/> } />
-            <Route path='/service/:id' element={ <Service/> } />
-            <Route path='/products' element={ <Products/> } />
-            <Route path='/services' element={ <Services/> } />
+          <Route path='/login' element={ <Login handleLogin={handleLogin} /> } />
+            <Route path='/' element={ <Login handleLogin={handleLogin} /> } />
+            <Route path='/home' element={ <Home user={user} /> }/>
+            <Route path='/user' element={ <User user={user} /> } />
+            <Route path='/store' element={ <Store user={user} /> } />
+            <Route path='/mystore' element={ <MyStore auth={user} /> } />
+            <Route path='/product/:id' element={ <Product user={user} /> } />
+            <Route path='/service/:id' element={ <Service user={user} /> } />
+            <Route path='/products' element={ <Products user={user}/> } />
+            <Route path='/services' element={ <Services user={user} /> } />
           </Routes>
         </BrowserRouter>
     </AnimatePresence>

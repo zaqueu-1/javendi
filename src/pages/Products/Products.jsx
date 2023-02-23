@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar'
 import './products.css'
 import Card from '../../components/Card/Card'
 import { motion } from 'framer-motion'
 import fetchDb from '../../axios/fetchDb'
 
-function Products() {
+function Products({user}) {
 
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
@@ -33,6 +34,10 @@ function Products() {
             const filteredProducts = products.filter(product => product.productTags === tag)
             setFilteredProducts(filteredProducts)
         }
+    }
+
+    if (!user) {
+      return <Navigate to="/login" />;
     }
 
   return (

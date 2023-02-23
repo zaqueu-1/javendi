@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar'
 import './home.css'
 import Card from '../../components/Card/Card'
 import { motion } from 'framer-motion'
 import fetchDb from '../../axios/fetchDb'
 
-function Home() {
+function Home({ user }) {
 
   const [products, setProducts] = useState([])
   const [services, setServices] = useState([])
@@ -13,17 +14,21 @@ function Home() {
   useEffect(() => {
     const loadProducts = async () => {
       const res = await fetchDb.get('/product')
-      setProducts(res.data.slice(0,5))
+      setProducts(res.data.slice(-5))
     }
 
     const loadServices = async () => {
       const res = await fetchDb.get('/service')
-      setServices(res.data.slice(0.5))
+      setServices(res.data.slice(-5))
     }
 
     loadProducts()
     loadServices()
   }, [])
+
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <>
